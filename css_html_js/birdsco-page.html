@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>birdsco</title>
+    <link rel="stylesheet" href="birdsco-page.css">
+</head>
+
+<body>
+    <script>
+        [alti, dist, gs, vs] = prompt("altitude, dist to wp, groundspeed, vertical speed 입력").split(" ")
+        console.log(alti, dist, gs, vs);
+    </script>
+    <div class="container">
+        <header class="header">
+            <h2 style="color:white; margin: 2px;">
+                <img src="../img/icon.png" alt="" width="30" height="24" style="margin:5px;">
+                Birdsco
+            </h2>
+        </header>
+        <div class="wrapper">
+            <div class="box1">
+                <h1>Bird detection monitoring</h1>
+                <img src="../img/bird2.PNG" width="750" height="380">
+            </div>
+            <div class="box2">
+                <h1>GPS 비행정보</h1>
+                <img src="../img/map.png" width="300" height="350">
+            </div>
+            <div class="box3">
+                <div class="wrapper2">
+                    <div class="box">
+                        <button type="button" onclick="alertProcessing('환경설정')">
+                            <img src="../img/setting.png" alt="" width="80" height="80">
+                            <h5>Setting</h5>
+                        </button>
+                    </div>
+                    <div class="box">
+                        <button type="button" onclick="alertProcessing('비상착륙')">
+                            <img src="../img/emer.png" alt="" width="80" height="80">
+                            <h5>Emergency Landing</h5>
+                        </button>
+                    </div>
+                    <div class="box">
+                        <button type="button" onclick="alertProcessing('복귀비행')">
+                            <img src="../img/return.png" alt="" width="80" height="80">
+                            <h5>Return</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="droneinfo" class="box4">
+                <div style=" margin: 0px 0px 0px 20px">
+                    <script>
+                        document.write(`<h4>Altitude(m): ${alti}</h4>`)
+                        document.write(`<h4>Dist to wp(m): ${dist}</h4>`)
+                        document.write(`<h4>GroundSpees.d(m/s): ${gs}</h4>`)
+                        document.write(`<h4>VerticalSpeed(m/s): ${vs}</h4>`)
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script SRC="../birdsco.js"></script>
+</body>
+
+</html>
